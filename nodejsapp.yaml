@@ -2,22 +2,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: k8s-app
+  name: k8s-app-a
   namespace: default
   labels:
-    app: k8s-app
+    app: k8s-app-a
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-app
+      app: k8s-app-a
   template:
     metadata:
       labels:
-        app: k8s-app
+        app: k8s-app-a
     spec:
       containers:
-      - name: k8s-app
+      - name: k8s-app-a
         image: "rajaninandu/hello-world-0.2-snapshot"
         ports:
           - containerPort: 3000
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-app
+  name: k8s-app-a
   namespace: default
 spec:
   selector:
-    app: k8s-app
+    app: k8s-app-a
   type: LoadBalancer
   ports:
   - name: http
