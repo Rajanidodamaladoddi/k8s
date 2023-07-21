@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: k8s-app-a
-        image: "rajaninandu/hello-world-0.2-snapshot"
+        image: "rajaninandu/k8s-img"
         ports:
           - containerPort: 3000
 ---
